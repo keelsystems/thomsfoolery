@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thoms Foolery | Smart Fan Chaos</title>
+
+  <meta name="description" content="Thoms Foolery - smart fan chaos for Blue Jays, Canadiens, Bills, and F1. Threads, breakdowns, memes, and the occasional live watch party with no team media filter." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thomsfoolery.com/" />
+
+  <meta property="og:title" content="Thoms Foolery | Smart Fan Chaos" />
+  <meta property="og:description" content="Smart fan chaos for Blue Jays, Canadiens, Bills, and F1. Breakdown threads, memes, and the occasional live watch party - no team media filter." />
+  <meta property="og:image" content="https://thomsfoolery.com/assets/thoms-foolery-hero.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#04101f" />
+
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    :root{
+      --bg:#040814;
+      --bg-elevated:#070f1f;
+      --bg-soft:#0b1628;
+      --ink:#e5e9f0;
+      --muted:#9ca3af;
+      --accent:#00c4b8;
+      --accent-soft:#0ea5e9;
+      --accent-alt:#f97316;
+      --card-border:rgba(148,163,184,.35);
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.55);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font-main);
+      background:radial-gradient(circle at top left,#0f172a 0, #020617 46%, #000 100%);
+      color:var(--ink);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit}
+
+    /* Nav */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(2,6,23,.96);
+      backdrop-filter: blur(16px);
+      border-bottom:1px solid rgba(148,163,184,.35);
+    }
+    .nav-inner{
+      max-width:1120px;
+      margin:0 auto;
+      padding:.7rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .brand-mark{
+      display:flex;
+      align-items:center;
+      gap:.55rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.8rem;
+    }
+    .brand-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
+      box-shadow:0 0 12px rgba(56,189,248,.9);
+    }
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      text-decoration:none;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .nav-links a:hover{
+      color:var(--ink);
+      background:rgba(15,23,42,.85);
+    }
+    .nav-cta{
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.8);
+      padding:.35rem .85rem;
+      font-size:.9rem;
+      text-decoration:none;
+      color:var(--ink);
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent));
+      box-shadow:0 0 18px rgba(34,211,238,.45);
+    }
+
+    /* Layout helpers */
+    main{
+      max-width:1120px;
+      margin:0 auto;
+      padding:1.5rem 1rem 2.5rem;
+    }
+    section{
+      background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(2,6,23,.98));
+      border-radius:var(--radius);
+      border:1px solid var(--card-border);
+      box-shadow:var(--shadow);
+      padding:1.6rem 1.4rem;
+      margin-bottom:1.3rem;
+    }
+    section h2{
+      margin:.15rem 0 .8rem;
+      font-size:1.2rem;
+    }
+    h3{margin:.4rem 0 .2rem; font-size:1.05rem}
+    h4{margin:.35rem 0 .15rem; font-size:.98rem}
+    p{margin:.25rem 0 .6rem; color:var(--muted); font-size:.95rem}
+    ul{margin:.3rem 0 .8rem 1.1rem; padding:0; color:var(--muted); font-size:.94rem}
+    li + li{margin-top:.16rem}
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:.25rem;
+      padding:.22rem .55rem;
+      border-radius:999px;
+      font-size:.8rem;
+      color:var(--ink);
+      border:1px solid rgba(148,163,184,.55);
+      background:radial-gradient(circle at top left,rgba(56,189,248,.3),rgba(15,23,42,.9));
+      margin:.15rem .25rem 0 0;
+      white-space:nowrap;
+    }
+
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+    @media(min-width:860px){
+      .grid.cols-2{grid-template-columns:1fr 1fr;}
+      .hero-layout{
+        display:grid;
+        grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+        gap:2.1rem;
+        align-items:center;
+      }
+    }
+
+    /* Hero */
+    header{
+      padding:2.2rem 1rem 2.3rem;
+      border-bottom:1px solid rgba(15,23,42,.9);
+      background:
+        radial-gradient(circle at top right,rgba(56,189,248,.25) 0,transparent 60%),
+        radial-gradient(circle at -20% 120%,rgba(249,115,22,.4) 0,transparent 60%),
+        #020617;
+    }
+    .hero-inner{
+      max-width:1120px;
+      margin:0 auto;
+    }
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--muted);
+      margin-bottom:.35rem;
+    }
+    .hero-title{
+      font-size:clamp(1.9rem,3vw + 1.4rem,2.6rem);
+      margin:.25rem 0 .4rem;
+    }
+    .hero-sub{
+      margin:0 0 .5rem;
+      max-width:620px;
+      color:var(--muted);
+    }
+    .hero-sub-2{
+      margin:0 0 1.1rem;
+      max-width:640px;
+      color:#cbd5f5;
+      font-size:.95rem;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      align-items:center;
+      margin:.3rem 0 .9rem;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-ghost{
+      text-decoration:none;
+      font-size:.9rem;
+      font-weight:600;
+      border-radius:999px;
+      padding:.6rem 1rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent));
+      color:#0f172a;
+      border:1px solid rgba(15,23,42,.6);
+      box-shadow:0 14px 38px rgba(34,211,238,.35);
+    }
+    .btn-ghost{
+      border:1px solid rgba(148,163,184,.8);
+      color:var(--ink);
+      background:rgba(15,23,42,.4);
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.4rem;
+      align-items:center;
+      font-size:.8rem;
+      color:var(--muted);
+    }
+    .hero-meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:.25rem;
+      padding:.23rem .55rem;
+      border-radius:999px;
+      background:rgba(15,23,42,.85);
+      border:1px solid rgba(30,64,175,.8);
+    }
+
+    .hero-visual{
+      position:relative;
+      border-radius:24px;
+      border:1px solid rgba(56,189,248,.6);
+      background:radial-gradient(circle at top left,rgba(56,189,248,.35),rgba(15,23,42,1));
+      padding:.4rem;
+      box-shadow:0 24px 60px rgba(15,23,42,.95);
+      overflow:hidden;
+    }
+    .hero-visual-inner{
+      border-radius:20px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#020617,#0b1220);
+      position:relative;
+    }
+    .hero-visual img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .hero-tag{
+      position:absolute;
+      left:1.1rem;
+      bottom:1.1rem;
+      padding:.25rem .6rem;
+      border-radius:999px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(56,189,248,.7);
+      font-size:.78rem;
+      color:#e5f6ff;
+    }
+
+    /* Cards */
+    .card{
+      border-radius:var(--radius);
+      border:1px solid var(--card-border);
+      background:radial-gradient(circle at top left,rgba(15,23,42,.9),rgba(15,23,42,.98));
+      padding:1rem .9rem .95rem;
+    }
+    .card h3, .card h4{color:#e5e7eb}
+    .card p{font-size:.9rem}
+    .card + .card{margin-top:.7rem}
+
+    .card-label{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.7rem;
+      color:var(--muted);
+      margin-bottom:.3rem;
+    }
+
+    .link-arrow{
+      font-size:.86rem;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--accent-soft);
+    }
+
+    /* Team pills with color accents */
+    .pill-jays{border-color:rgba(37,99,235,.85); background:linear-gradient(135deg,rgba(37,99,235,.5),rgba(15,23,42,.95));}
+    .pill-habs{border-color:rgba(248,113,113,.9); background:linear-gradient(135deg,rgba(248,113,113,.55),rgba(15,23,42,.96));}
+    .pill-bills{border-color:rgba(129,140,248,.9); background:linear-gradient(135deg,rgba(59,130,246,.5),rgba(15,23,42,.96));}
+    .pill-f1{border-color:rgba(249,115,22,.95); background:linear-gradient(135deg,rgba(249,115,22,.55),rgba(15,23,42,.98));}
+
+    /* Merch thumbs */
+    .merch-grid{
+      display:grid;
+      gap:1rem;
+    }
+    @media(min-width:720px){
+      .merch-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    }
+    .merch-thumb{
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.45);
+      background-size:cover;
+      background-position:center;
+      height:130px;
+      margin-bottom:.55rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .merch-thumb::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(15,23,42,.1),rgba(15,23,42,.7));
+    }
+    .merch-drop1{background-image:url("assets/tf-drop-1.png");}
+    .merch-drop2{background-image:url("assets/tf-drop-2.png");}
+    .merch-drop3{background-image:url("assets/tf-drop-3.png");}
+
+    /* Highlights slider */
+    .highlight-slider{
+      margin-top:.9rem;
+    }
+    .highlight-frame{
+      position:relative;
+      border-radius:var(--radius);
+      border:1px solid var(--card-border);
+      background:radial-gradient(circle at top left,rgba(15,23,42,.9),rgba(2,6,23,.98));
+      padding:.8rem;
+      overflow:hidden;
+      min-height:260px;
+    }
+    .highlight-track{
+      position:relative;
+    }
+    .highlight-slide{
+      display:none;
+    }
+    .highlight-slide.active{
+      display:block;
+    }
+    .highlight-nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:.6rem;
+      font-size:.82rem;
+      color:var(--muted);
+    }
+    .highlight-buttons{
+      display:flex;
+      gap:.4rem;
+    }
+    .highlight-buttons button{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.7);
+      background:rgba(15,23,42,.85);
+      color:var(--ink);
+      padding:.25rem .7rem;
+      font-size:.8rem;
+      cursor:pointer;
+    }
+    .highlight-buttons button:hover{
+      border-color:rgba(56,189,248,.7);
+    }
+
+    /* Contact */
+    .contact-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin-top:.4rem;
+    }
+    .chip-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.3rem;
+      padding:.38rem .7rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.7);
+      background:rgba(15,23,42,.85);
+      font-size:.85rem;
+      text-decoration:none;
+      color:var(--ink);
+    }
+
+    footer{
+      max-width:1120px;
+      margin:0 auto;
+      padding:1.5rem 1rem 2.3rem;
+      font-size:.8rem;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media(max-width:640px){
+      section{padding:1.25rem 1rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <div class="brand-mark">
+        <span class="brand-dot"></span>
+        Thoms Foolery
+      </div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="threads.html">Threads</a>
+        <a href="merch.html">Merch</a>
+        <a href="#teams">Teams</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">@ThomsFoolery</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top">
+    <div class="hero-inner hero-layout">
+      <div>
+        <div class="hero-kicker">Blue Jays · Canadiens · Bills · F1</div>
+        <h1 class="hero-title">Smart fan chaos. No team media filter.</h1>
+        <p class="hero-sub">
+          Live watch parties, instant reactions, and threads that actually show the
+          moments behind the narratives.
+        </p>
+        <p class="hero-sub-2">
+          From umpires, blown saves, and pit wall fumbles to front office decisions, Thoms Foolery
+          calls out the nonsense, breaks down the good stuff, and has fun doing it. No PR gloss,
+          just what fans are really thinking in the game’s weirdest moments.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="threads.html">Read latest threads</a>
+          <a class="btn-ghost" href="#merch">Shop the latest drop</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>📊 Threads · clips · memes</span>
+          <span>🎙️ Occasional live watch parties</span>
+          <span>🧢 Blue Jays · Habs · Bills · F1 grid</span>
+        </div>
+
+        <div style="margin-top:.65rem;">
+          <span class="pill pill-jays">Blue Jays breakdowns</span>
+          <span class="pill pill-bills">Bills panic logs</span>
+          <span class="pill pill-habs">Canadiens pain charts</span>
+          <span class="pill pill-f1">F1 chaos dives</span>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-inner">
+          <img src="assets/thoms-foolery-hero.png" alt="Thoms Foolery sports collage" />
+          <div class="hero-tag">Baseball. Real-time truth.</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <!-- Formats -->
+    <section id="formats">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-label">What you will see</div>
+          <h2>Formats and cadence</h2>
+          <p>
+            Thoms Foolery is X-first: threads, clips, and memes hit the timeline first, then the best
+            stuff lands here so it does not get buried.
+          </p>
+          <ul>
+            <li>Game and series breakdown threads that track storylines over a full week.</li>
+            <li>Clip notes, meme templates, and graphics that spike when chaos happens.</li>
+            <li>Longer recap posts when the Jays, Habs, Bills, or F1 grid break our brains.</li>
+            <li>Live watch parties when the schedule, kids, and Wi-Fi all agree.</li>
+          </ul>
+          <a class="link-arrow" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">
+            Follow the chaos on X →
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-label">In season rhythm</div>
+          <h3>How often this actually happens</h3>
+          <ul>
+            <li><strong>Blue Jays:</strong> game day threads, series breakdowns, and postmortems.</li>
+            <li><strong>Habs and Bills:</strong> live reactions, panic logs, and “we’re back” overreactions.</li>
+            <li><strong>F1:</strong> race weekend prep, quali chaos charts, and strategy second guessing.</li>
+            <li><strong>Offseasons:</strong> rumour threads, trade breakdowns, and schedule overreactions.</li>
+          </ul>
+          <p style="font-size:.85rem;color:var(--muted);">
+            For a proper thread archive and longer write ups, the Threads page keeps a running log.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights slider -->
+    <section id="highlights">
+      <h2>Highlights from X</h2>
+      <p>
+        A few of the posts that did the numbers. These are live embeds, so you can like, repost,
+        and reply right from here.
+      </p>
+      <div class="highlight-slider">
+        <div class="highlight-frame">
+          <div class="highlight-track">
+
+            <!-- Highlight 1 -->
+            <div class="highlight-slide active">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1987580310674956326"></a>
+              </blockquote>
+            </div>
+
+            <!-- Highlight 2 -->
+            <div class="highlight-slide">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1986501807653138645"></a>
+              </blockquote>
+            </div>
+
+            <!-- Highlight 3 -->
+            <div class="highlight-slide">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1986832702696530340"></a>
+              </blockquote>
+            </div>
+
+            <!-- Highlight 4 -->
+            <div class="highlight-slide">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1987841410771620309"></a>
+              </blockquote>
+            </div>
+
+            <!-- Highlight 5 -->
+            <div class="highlight-slide">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1983222387353989163"></a>
+              </blockquote>
+            </div>
+
+            <!-- Highlight 6 -->
+            <div class="highlight-slide">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://x.com/ThomsFoolery/status/1983239674224111660"></a>
+              </blockquote>
+            </div>
+
+          </div>
+        </div>
+        <div class="highlight-nav">
+          <span>Use the arrows or swipe to see more.</span>
+          <div class="highlight-buttons">
+            <button type="button" id="hl-prev">← Prev</button>
+            <button type="button" id="hl-next">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teams -->
+    <section id="teams">
+      <h2>Teams and obsessions</h2>
+      <p>
+        Every creator has their core teams. These are the ones that get the most energy,
+        spreadsheets, and unhinged late night posts.
+      </p>
+      <div class="grid cols-2" style="margin-top:.8rem;">
+        <div class="card">
+          <h3>Toronto Blue Jays</h3>
+          <p>
+            Daily overreactions, series breakdowns, and stubborn belief that the next window
+            will be the one. Lineup decisions, bullpen roulette, and “why does this team hate vibes” analysis.
+          </p>
+          <div>
+            <span class="pill pill-jays">Series threads</span>
+            <span class="pill pill-jays">Bullpen audits</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Montreal Canadiens</h3>
+          <p>
+            Generational pain, prospect hope, and a running log of “we’re so back” or “we are cooked”
+            swings over the course of a season.
+          </p>
+          <div>
+            <span class="pill pill-habs">Rebuild sanity checks</span>
+            <span class="pill pill-habs">Pain charts</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Buffalo Bills</h3>
+          <p>
+            Panic logs, coaching decisions, and “how did that just happen again” breakdowns.
+            Josh Allen hero ball appreciation with a side of trauma.
+          </p>
+          <div>
+            <span class="pill pill-bills">Game scripts</span>
+            <span class="pill pill-bills">Offense autopsies</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>F1 and Oscar Piastri</h3>
+          <p>
+            Strategy meltdowns, team radio moments, and lap by lap chaos. Special focus on Oscar Piastri,
+            McLaren choices, and “what were they cooking” stints.
+          </p>
+          <div>
+            <span class="pill pill-f1">Race chaos dives</span>
+            <span class="pill pill-f1">Tyre narrative patrol</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Threads preview -->
+    <section id="threads-preview">
+      <h2>Featured threads and posts</h2>
+      <p>
+        A few longer threads and posts that represent what Thoms Foolery is about. The full list
+        lives on the Threads page.
+      </p>
+      <div class="grid cols-2" style="margin-top:.8rem;">
+        <div class="card">
+          <h4>Blue Jays series breakdowns</h4>
+          <p>
+            Multi game threads tracking lineup plans, plate appearances, and “how did we lose this one”
+            moments. Charts, screenshots, and receipts.
+          </p>
+          <a class="link-arrow" href="threads.html#jays">See Jays breakdown archive →</a>
+        </div>
+        <div class="card">
+          <h4>F1 race chaos notes</h4>
+          <p>
+            Lap by lap accountability logs, tyre gambles, and conversations from Oscar Piastri’s point of view.
+          </p>
+          <a class="link-arrow" href="threads.html#f1">Read race recap threads →</a>
+        </div>
+        <div class="card">
+          <h4>Habs rebuild sanity checks</h4>
+          <p>
+            When is the pain actually progress. Season long tracking posts on where Montreal stands
+            relative to where they think they are.
+          </p>
+          <a class="link-arrow" href="threads.html#habs">Browse Habs threads →</a>
+        </div>
+        <div class="card">
+          <h4>Bills chaos logs</h4>
+          <p>
+            “How did that drive happen” notes, red zone breakdowns, and game ending play autopsies
+            for the most stressful team in football.
+          </p>
+          <a class="link-arrow" href="threads.html#bills">More Bills game logs →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Merch -->
+    <section id="merch">
+      <h2>Merch and meme drops</h2>
+      <p>
+        When a moment hits, it deserves a shirt, mug, or sticker. Merch is handled through print on demand
+        so drops can react to whatever nonsense the Jays, Habs, Bills, or F1 grid just pulled.
+      </p>
+
+      <div class="merch-grid" style="margin-top:.9rem;">
+        <div class="card">
+          <div class="merch-thumb merch-drop1"></div>
+          <h3>Current drop</h3>
+          <p>
+            The latest design built around a live moment or running bit. Limited time runs that match
+            the chaos of the season.
+          </p>
+          <a class="link-arrow" href="merch.html#current">View current drop →</a>
+        </div>
+
+        <div class="card">
+          <div class="merch-thumb merch-drop2"></div>
+          <h3>Evergreen staples</h3>
+          <p>
+            Thoms Foolery wordmarks, Smart Fan Chaos designs, and clean pieces you can wear even when
+            your team just blew a four run lead.
+          </p>
+          <a class="link-arrow" href="merch.html#staples">Browse staples →</a>
+        </div>
+
+        <div class="card">
+          <div class="merch-thumb merch-drop3"></div>
+          <h3>Moment lab</h3>
+          <p>
+            Ideas in testing built from viral plays, cursed sequences, or chat memes. Help decide what
+            should graduate to a real drop.
+          </p>
+          <a class="link-arrow" href="merch.html#lab">See the lab →</a>
+        </div>
+      </div>
+
+      <p style="margin-top:.9rem;font-size:.83rem;color:var(--muted);">
+        Some links may be affiliate or merch partner links at no extra cost to you. They help keep the
+        chaos funded.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>What is Thoms Foolery?</h2>
+      <p>
+        Thoms Foolery started as one guy yelling into the void about Blue Jays lineups and F1 strategy.
+        Over time, those posts turned into a place where people can get smart, no nonsense commentary
+        that is not filtered through team media departments.
+      </p>
+      <p>
+        The goal is simple: be honest, be nerdy when it helps, and still remember that sports are supposed
+        to be fun. Some nights that means pitch charts and game theory. Other nights it is just group therapy
+        with a scoreboard.
+      </p>
+      <p>
+        The website is the home base for longer threads, visual breakdowns, and merch drops. X is where the
+        real time chaos lives.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact and collabs</h2>
+      <p>
+        If you want to talk about collabs, sponsorships, or just nerd out about your sport project, you can
+        reach out here. DMs are open on X as well.
+      </p>
+      <div class="contact-buttons">
+        <a class="chip-link" href="mailto:thomsfoolery@thoms.email">
+          ✉️ thomsfoolery@thoms.email
+        </a>
+        <a class="chip-link" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">
+          🐦 @ThomsFoolery on X
+        </a>
+        <a class="chip-link" href="https://thoms.email" target="_blank" rel="noopener">
+          🧑‍💻 Jonathan main site
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Thoms Foolery. Built by Jonathan Thoms · <a href="https://thoms.email">thoms.email</a>
+  </footer>
+
+  <!-- X embed script for highlights -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <!-- Simple slider logic -->
+  <script>
+    (function(){
+      const slides = document.querySelectorAll(".highlight-slide");
+      if(!slides.length) return;
+
+      let index = 0;
+      const total = slides.length;
+
+      function showSlide(nextIndex){
+        slides[index].classList.remove("active");
+        index = (nextIndex + total) % total;
+        slides[index].classList.add("active");
+      }
+
+      const prevBtn = document.getElementById("hl-prev");
+      const nextBtn = document.getElementById("hl-next");
+
+      if(prevBtn && nextBtn){
+        prevBtn.addEventListener("click", function(){ showSlide(index - 1); });
+        nextBtn.addEventListener("click", function(){ showSlide(index + 1); });
+      }
+    })();
+  </script>
+</body>
+</html>

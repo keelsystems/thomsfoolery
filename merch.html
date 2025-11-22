@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merch & Drops | Thoms Foolery</title>
+
+  <meta name="description" content="Thoms Foolery merch. Current drops, evergreen staples, and meme ready ideas built from Blue Jays, Canadiens, Bills, and F1 chaos." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thomsfoolery.com/merch.html" />
+
+  <meta property="og:title" content="Merch & Drops | Thoms Foolery" />
+  <meta property="og:description" content="Smart fan chaos on shirts, hoodies, mugs, and more. Prints inspired by Blue Jays, Canadiens, Bills, and F1 moments." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#04101f" />
+
+  <link rel="icon" href="/favicon.svg" />
+
+  <style>
+    :root{
+      --bg:#040814;
+      --bg-elevated:#070f1f;
+      --bg-soft:#0b1628;
+      --ink:#e5e9f0;
+      --muted:#9ca3af;
+      --accent:#00c4b8;
+      --accent-soft:#0ea5e9;
+      --accent-alt:#f97316;
+      --card-border:rgba(148,163,184,.35);
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.55);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font-main);
+      background:radial-gradient(circle at top left,#0f172a 0, #020617 46%, #000 100%);
+      color:var(--ink);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit}
+
+    /* Nav */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(2,6,23,.96);
+      backdrop-filter: blur(16px);
+      border-bottom:1px solid rgba(148,163,184,.35);
+    }
+    .nav-inner{
+      max-width:1120px;
+      margin:0 auto;
+      padding:.7rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .brand-mark{
+      display:flex;
+      align-items:center;
+      gap:.55rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.8rem;
+    }
+    .brand-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
+      box-shadow:0 0 12px rgba(56,189,248,.9);
+    }
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      text-decoration:none;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .nav-links a:hover{
+      color:var(--ink);
+      background:rgba(15,23,42,.85);
+    }
+    .nav-cta{
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.8);
+      padding:.35rem .85rem;
+      font-size:.9rem;
+      text-decoration:none;
+      color:var(--ink);
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent));
+      box-shadow:0 0 18px rgba(34,211,238,.45);
+    }
+
+    /* Header */
+    header{
+      padding:2rem 1rem 2.1rem;
+      border-bottom:1px solid rgba(15,23,42,.9);
+      background:
+        radial-gradient(circle at top right,rgba(56,189,248,.25) 0,transparent 60%),
+        radial-gradient(circle at -20% 120%,rgba(249,115,22,.35) 0,transparent 60%),
+        #020617;
+    }
+    .hero-inner{
+      max-width:1120px;
+      margin:0 auto;
+    }
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--muted);
+    }
+    h1{
+      margin:.4rem 0 .35rem;
+      font-size:clamp(1.8rem,2.7vw + 1.2rem,2.4rem);
+    }
+    .sub{
+      margin:0 0 .5rem;
+      max-width:640px;
+      color:var(--muted);
+    }
+    .sub-secondary{
+      margin:0 0 1rem;
+      max-width:640px;
+      color:#cbd5f5;
+      font-size:.93rem;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin-top:.5rem;
+    }
+    .hero-actions a{
+      text-decoration:none;
+      font-size:.9rem;
+      font-weight:600;
+      border-radius:999px;
+      padding:.55rem .95rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent));
+      color:#0f172a;
+      border:1px solid rgba(15,23,42,.6);
+      box-shadow:0 14px 38px rgba(34,211,238,.35);
+    }
+    .btn-ghost{
+      border:1px solid rgba(148,163,184,.8);
+      color:var(--ink);
+      background:rgba(15,23,42,.4);
+    }
+
+    main{
+      max-width:1120px;
+      margin:0 auto;
+      padding:1.6rem 1rem 2.4rem;
+    }
+    section{
+      background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(2,6,23,.98));
+      border-radius:var(--radius);
+      border:1px solid var(--card-border);
+      box-shadow:var(--shadow);
+      padding:1.5rem 1.4rem;
+      margin-bottom:1.3rem;
+    }
+    section h2{
+      margin:.1rem 0 .7rem;
+      font-size:1.2rem;
+    }
+    h3{margin:.45rem 0 .25rem;font-size:1.02rem}
+    p{margin:.25rem 0 .55rem;color:var(--muted);font-size:.94rem}
+    ul{margin:.3rem 0 .8rem 1.1rem;padding:0;color:var(--muted);font-size:.93rem}
+    li + li{margin-top:.16rem}
+
+    .grid{display:grid;gap:1rem}
+    @media(min-width:860px){
+      .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+      .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+
+    .product-card{
+      border-radius:16px;
+      border:1px solid var(--card-border);
+      background:radial-gradient(circle at top left,rgba(15,23,42,.9),rgba(15,23,42,.98));
+      padding:.9rem .9rem 1rem;
+    }
+    .product-tagline{
+      font-size:.86rem;
+      color:#e5e7eb;
+      margin-bottom:.2rem;
+    }
+    .meta{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-bottom:.25rem;
+    }
+    .thumb{
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.5);
+      background-size:cover;
+      background-position:center;
+      height:150px;
+      margin-bottom:.6rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .thumb::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(15,23,42,.1),rgba(15,23,42,.7));
+    }
+    .thumb-current{background-image:url("assets/tf-drop-1.png");}
+    .thumb-staples{background-image:url("assets/tf-drop-2.png");}
+    .thumb-lab{background-image:url("assets/tf-drop-3.png");}
+
+    .pill-row{
+      margin-top:.35rem;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:.2rem .55rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.7);
+      font-size:.78rem;
+      color:var(--ink);
+      margin:.1rem .25rem 0 0;
+      background:rgba(15,23,42,.9);
+    }
+
+    .link-arrow{
+      font-size:.85rem;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--accent-soft);
+    }
+
+    .notice{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-top:.7rem;
+    }
+
+    footer{
+      max-width:1120px;
+      margin:0 auto;
+      padding:1.2rem 1rem 2.3rem;
+      font-size:.8rem;
+      color:var(--muted);
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <div class="brand-mark">
+        <span class="brand-dot"></span>
+        Thoms Foolery
+      </div>
+      <div class="nav-links">
+        <a href="index.html#top">Home</a>
+        <a href="threads.html">Threads</a>
+        <a href="merch.html">Merch</a>
+        <a href="index.html#teams">Teams</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="nav-cta" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">@ThomsFoolery</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-inner">
+      <div class="hero-kicker">Merch</div>
+      <h1>Merch, meme drops, and fan gear</h1>
+      <p class="sub">
+        Shirts, hoodies, mugs, and prints for people who live every Jays meltdown, Habs rebuild beat,
+        Bills panic log, and F1 chaos dive.
+      </p>
+      <p class="sub-secondary">
+        Everything runs through a print on demand partner so drops can react fast when the season
+        delivers a new inside joke. Current designs and ideas in the lab live here.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#current">Jump to current drop</a>
+        <a class="btn-ghost" href="https://example.com" target="_blank" rel="noopener">Open full store</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="current">
+      <h2>Current drop</h2>
+      <p>
+        The headline design that matches what is happening on the field, ice, grid, or in the panic logs
+        right now.
+      </p>
+
+      <div class="grid cols-2" style="margin-top:.8rem;">
+        <article class="product-card">
+          <div class="thumb thumb-current"></div>
+          <div class="meta">Drop 01 · Example art</div>
+          <h3>Smart Fan Chaos wordmark tee</h3>
+          <p class="product-tagline">
+            Clean front hit with a subtle nod that you watch games with spreadsheets, not vibes alone.
+          </p>
+          <ul>
+            <li>Midweight cotton tee that holds up to extra innings.</li>
+            <li>Front chest print with Thoms Foolery badge on the sleeve.</li>
+            <li>Great for Jays games, Habs pain nights, or Bills panic logs.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">Blue Jays</span>
+            <span class="pill">Canadiens</span>
+            <span class="pill">Bills</span>
+            <span class="pill">F1 grid</span>
+          </div>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">
+              Shop the Smart Fan Chaos tee →
+            </a>
+          </p>
+        </article>
+
+        <article class="product-card">
+          <div class="thumb thumb-current"></div>
+          <div class="meta">Add ons · Example art</div>
+          <h3>Scoreboard mug and sticker pack</h3>
+          <p class="product-tagline">
+            For people who drink coffee while refreshing Fangraphs and yelling about win probability.
+          </p>
+          <ul>
+            <li>Wraparound mug art with a cursed scoreboard scenario.</li>
+            <li>Sticker pack built from recurring bits and meme templates.</li>
+            <li>Perfect desk kit for game day threads or watch parties.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">Mug</span>
+            <span class="pill">Stickers</span>
+            <span class="pill">Desk setup</span>
+          </div>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">
+              Shop mug and stickers →
+            </a>
+          </p>
+        </article>
+      </div>
+
+      <p class="notice">
+        These links use example.com as a placeholder until the store is live. Swap them for your
+        Teespring or other merch platform once it is ready.
+      </p>
+    </section>
+
+    <section id="staples">
+      <h2>Evergreen staples</h2>
+      <p>
+        Pieces that work even when your team just blew a four run lead or took a too many men penalty.
+        Simple designs that still read as Thoms Foolery to anyone in the know.
+      </p>
+
+      <div class="grid cols-3" style="margin-top:.8rem;">
+        <article class="product-card">
+          <div class="thumb thumb-staples"></div>
+          <div class="meta">Staple</div>
+          <h3>Thoms Foolery logo hat</h3>
+          <p>
+            Clean cap with the TF mark for everyday wear. Works at the ballpark, rink, or just at the
+            grocery store when you want to broadcast that you have sports brain.
+          </p>
+          <div class="pill-row">
+            <span class="pill">TF logo</span>
+            <span class="pill">Everyday wear</span>
+          </div>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">
+              Shop logo hat →
+            </a>
+          </p>
+        </article>
+
+        <article class="product-card">
+          <div class="thumb thumb-staples"></div>
+          <div class="meta">Staple</div>
+          <h3>Thoms Foolery hoodie</h3>
+          <p>
+            Heavy hoodie for late night games and winter slates. Front logo, back print that reads
+            Smart Fan Chaos so people know you are not watching casually.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Hoodie</span>
+            <span class="pill">Cold games</span>
+          </div>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">
+              Shop hoodie →
+            </a>
+          </p>
+        </article>
+
+        <article class="product-card">
+          <div class="thumb thumb-staples"></div>
+          <div class="meta">Staple</div>
+          <h3>Minimal wordmark tee</h3>
+          <p>
+            Simple Thoms Foolery type on the chest. Good for people who want the brand without
+            announcing that they yelled about bullpen usage for three hours last night.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Minimal</span>
+            <span class="pill">Wordmark</span>
+          </div>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://example.com" target="_blank" rel="noopener">
+              Shop wordmark tee →
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="lab">
+      <h2>Moment lab</h2>
+      <p>
+        This is where ideas live while they prove themselves. Designs based on viral clips, cursed
+        plays, and recurring bits from the timeline.
+      </p>
+
+      <div class="grid cols-2" style="margin-top:.8rem;">
+        <article class="product-card">
+          <div class="thumb thumb-lab"></div>
+          <div class="meta">Concept</div>
+          <h3>Bullpen meltdown flowchart</h3>
+          <p>
+            A graphic that walks through every way a game can slip away. If you have read a Jays panic
+            log, you already know the boxes on this chart.
+          </p>
+          <p>
+            Polls and feedback on X help decide whether this becomes a real shirt or stays in the sketchbook.
+          </p>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">
+              Vote on designs on X →
+            </a>
+          </p>
+        </article>
+
+        <article class="product-card">
+          <div class="thumb thumb-lab"></div>
+          <div class="meta">Concept</div>
+          <h3>Race chaos lap chart</h3>
+          <p>
+            Stylized lap chart for an F1 race where strategy fully went off the rails. Think tyre calls,
+            safety car timing, and where the Piastri line should have been.
+          </p>
+          <p>
+            Could turn into prints or posters once the right race gives us the perfect chaos profile.
+          </p>
+          <p style="margin-top:.6rem;">
+            <a class="link-arrow" href="https://x.com/ThomsFoolery" target="_blank" rel="noopener">
+              Drop race ideas in the replies →
+            </a>
+          </p>
+        </article>
+      </div>
+
+      <p class="notice">
+        If you have an idea from a Jays series, Habs game, Bills drive, or F1 weekend that deserves
+        a shirt, tag @ThomsFoolery on X. If people latch onto it, it might end up here next.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Thoms Foolery. Merch and drops hub · <a href="index.html">Back to home</a>
+  </footer>
+</body>
+</html>
