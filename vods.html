@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VODs + Clips | Thoms Foolery</title>
+  <meta name="description" content="Recent VODs, clips, and shorts. Links out to platforms." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/"><span class="dot"></span><span>Thoms Foolery</span></a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/watch-parties.html">Watch Parties</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/vods.html" aria-current="page">VODs + Clips</a>
+        <a href="/series.html">Series</a>
+        <a href="/about.html">About</a>
+        <a href="/links.html">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <p class="kicker">Recaps, highlights, and the good bits</p>
+      <h1 class="h1">VODs + Clips</h1>
+      <p class="tagline">
+        This page is the directory. The videos live on the platforms.
+      </p>
+      <div class="ctaRow">
+        <a class="btn primary" href="/links.html">Go to platforms</a>
+        <a class="btn" href="/watch-parties.html">Schedule</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">Recent</h2>
+      <div class="grid three">
+        <article class="card"><h3>Latest watch party</h3><p>Link to the VOD.</p><div class="meta"><a href="/links.html">Open platform →</a></div></article>
+        <article class="card"><h3>Best clip</h3><p>Link to the clip.</p><div class="meta"><a href="/links.html">Open platform →</a></div></article>
+        <article class="card"><h3>Short</h3><p>Link to the short.</p><div class="meta"><a href="/links.html">Open platform →</a></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="split">
+        <div>
+          <strong style="color:var(--text)">Thoms Foolery</strong>
+          <p style="margin:8px 0 0 0">Home base for watch parties, build logs, and smart chaos.</p>
+        </div>
+        <div class="list">
+          <a class="btn primary" href="/links.html">Follow + notifications</a>
+          <a class="btn" href="/watch-parties.html">Schedule</a>
+          <a class="btn" href="/projects.html">Projects</a>
+        </div>
+      </div>
+      <p class="small">© <span id="y"></span> Thoms Foolery · Built by Jonathan Thoms</p>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

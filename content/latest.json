@@ -1,0 +1,22 @@
+{
+  "cards": [
+    {
+      "title": "Watch party recap",
+      "blurb": "Marked moments, turning points, and the quick receipts.",
+      "href": "/vods.html",
+      "linkText": "Watch the VOD"
+    },
+    {
+      "title": "New project log",
+      "blurb": "From sketch to finished thing, with notes on what worked.",
+      "href": "/projects.html",
+      "linkText": "Read the build log"
+    },
+    {
+      "title": "Newest clip",
+      "blurb": "The best 30 seconds from the last session.",
+      "href": "/vods.html",
+      "linkText": "Watch"
+    }
+  ]
+}

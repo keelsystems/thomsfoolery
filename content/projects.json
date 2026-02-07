@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "title": "Custom pinatas",
+      "status": "Active",
+      "category": "Design",
+      "blurb": "Design, cut, assemble, reveal.",
+      "href": "/projects.html#pinatas"
+    },
+    {
+      "title": "Shelves and home solutions",
+      "status": "Active",
+      "category": "Build",
+      "blurb": "Function-first, clean finish.",
+      "href": "/projects.html#shelves"
+    },
+    {
+      "title": "Stream tooling",
+      "status": "Ongoing",
+      "category": "Tools",
+      "blurb": "Scorebugs, overlays, workflows.",
+      "href": "/projects.html#stream-tools"
+    },
+    {
+      "title": "Electronics corner",
+      "status": "Whenever",
+      "category": "Electronics",
+      "blurb": "Breadboard, solder, tiny automations.",
+      "href": "/projects.html#electronics"
+    }
+  ]
+}

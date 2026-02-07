@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch Parties | Thoms Foolery</title>
+  <meta name="description" content="Schedule, recaps, and entry points for Blue Jays, F1, and Formula E watch parties." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/"><span class="dot"></span><span>Thoms Foolery</span></a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/watch-parties.html" aria-current="page">Watch Parties</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/vods.html">VODs + Clips</a>
+        <a href="/series.html">Series</a>
+        <a href="/about.html">About</a>
+        <a href="/links.html">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <p class="kicker">Schedule and recaps</p>
+      <h1 class="h1">Watch Parties</h1>
+      <p class="tagline">
+        Live when we can, replay when we can’t. The goal is the same: good context, marked moments, and quick receipts.
+      </p>
+      <div class="ctaRow">
+        <a class="btn primary" href="/links.html">Follow + notifications</a>
+        <a class="btn" href="/vods.html">Recent VODs</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">Upcoming</h2>
+      <div id="scheduleList" class="list">
+        <div class="card">
+          <p>Update <code>/content/schedule.json</code> to populate the schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">How it works</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Watch party setup</h3>
+          <p>On-screen context, moment markers, and a quick debrief after big swings.</p>
+        </article>
+        <article class="card">
+          <h3>If we miss it live</h3>
+          <p>We watch it later. Same format, same receipts, less time pressure.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="split">
+        <div>
+          <strong style="color:var(--text)">Thoms Foolery</strong>
+          <p style="margin:8px 0 0 0">Home base for watch parties, build logs, and smart chaos.</p>
+        </div>
+        <div class="list">
+          <a class="btn primary" href="/links.html">Follow + notifications</a>
+          <a class="btn" href="/projects.html">Projects</a>
+          <a class="btn" href="/vods.html">VODs + Clips</a>
+        </div>
+      </div>
+      <p class="small">© <span id="y"></span> Thoms Foolery · Built by Jonathan Thoms</p>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

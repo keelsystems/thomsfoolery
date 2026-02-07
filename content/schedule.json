@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "title": "Blue Jays Watch Party",
+      "when": "2026-02-07T20:00:00-03:30",
+      "where": "Kick \u00b7 Twitch \u00b7 YouTube",
+      "type": "MLB",
+      "note": "If we miss it live, we watch it later."
+    },
+    {
+      "title": "F1 Weekend Watch Party",
+      "when": "2026-02-08T14:30:00-03:30",
+      "where": "Kick \u00b7 Twitch \u00b7 YouTube",
+      "type": "F1",
+      "note": "Quali, race day, and a quick debrief."
+    }
+  ]
+}

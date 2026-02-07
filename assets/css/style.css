@@ -1,0 +1,179 @@
+:root{
+  --bg: #0b0f14;
+  --panel: #101826;
+  --text: #e7eef7;
+  --muted: #a8b3c4;
+
+  --gold: #f6c453;
+  --gold2: #d9a93a;
+
+  --line: rgba(231,238,247,0.10);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  --radius: 18px;
+  --max: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(246,196,83,0.10), transparent 55%),
+              radial-gradient(900px 700px at 90% 10%, rgba(246,196,83,0.06), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height:1.5;
+}
+
+a{color:inherit; text-decoration:none}
+a:hover{opacity:0.95}
+
+.container{max-width:var(--max); margin:0 auto; padding:24px}
+.skip{
+  position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip:focus{
+  left:24px; top:24px; width:auto; height:auto; padding:10px 12px;
+  background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  z-index:1000;
+}
+
+.header{
+  position:sticky; top:0;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,20,0.70);
+  border-bottom: 1px solid var(--line);
+  z-index:999;
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; letter-spacing:0.2px;
+}
+.dot{
+  width:10px; height:10px; border-radius:999px;
+  background: linear-gradient(180deg, var(--gold), var(--gold2));
+  box-shadow: 0 0 0 4px rgba(246,196,83,0.12);
+}
+.navlinks{
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.navlinks a{
+  padding:10px 12px;
+  border:1px solid transparent;
+  border-radius:999px;
+  color:var(--muted);
+}
+.navlinks a[aria-current="page"]{
+  border-color: var(--line);
+  color: var(--text);
+  background: rgba(16,24,38,0.55);
+}
+
+.hero{
+  padding:44px 0 22px;
+}
+.kicker{
+  color: var(--muted);
+  margin: 0 0 10px 0;
+}
+.h1{
+  margin: 0 0 12px 0;
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height:1.05;
+  letter-spacing:-0.6px;
+}
+.tagline{
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 0 18px 0;
+}
+.ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 0}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(16,24,38,0.50);
+  box-shadow: var(--shadow);
+}
+.btn.primary{
+  border-color: rgba(246,196,83,0.35);
+  background: linear-gradient(180deg, rgba(246,196,83,0.16), rgba(246,196,83,0.08));
+}
+.btn:hover{transform: translateY(-1px)}
+.small{font-size: 13px; color: var(--muted); margin-top:12px}
+
+.section{
+  padding: 18px 0;
+}
+.h2{
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  letter-spacing:-0.2px;
+}
+.grid{
+  display:grid;
+  gap: 12px;
+}
+.grid.two{grid-template-columns: repeat(2, minmax(0, 1fr))}
+.grid.three{grid-template-columns: repeat(3, minmax(0, 1fr))}
+.grid.four{grid-template-columns: repeat(4, minmax(0, 1fr))}
+@media (max-width: 980px){
+  .grid.four{grid-template-columns: repeat(2, minmax(0, 1fr))}
+  .grid.three{grid-template-columns: repeat(2, minmax(0, 1fr))}
+}
+@media (max-width: 640px){
+  .grid.two, .grid.three, .grid.four{grid-template-columns: 1fr}
+}
+
+.card{
+  border: 1px solid var(--line);
+  background: rgba(16,24,38,0.55);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.card h3{margin:0 0 6px 0; font-size:16px}
+.card p{margin:0; color: var(--muted)}
+.card .meta{margin-top:10px; font-size:13px; color: var(--muted)}
+.tag{
+  display:inline-flex; align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+.tag.gold{
+  border-color: rgba(246,196,83,0.35);
+  color: rgba(246,196,83,0.95);
+  background: rgba(246,196,83,0.10);
+}
+
+.split{
+  display:flex; gap:12px; align-items:stretch;
+}
+.split > *{flex:1}
+@media (max-width: 800px){ .split{flex-direction:column} }
+
+.footer{
+  margin-top: 28px;
+  padding: 22px 0 40px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+.footer a{color: var(--text)}
+.list{display:grid; gap:10px}
+.listItem{
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  border:1px solid var(--line);
+  background: rgba(16,24,38,0.45);
+  border-radius: 14px;
+  padding: 12px;
+}
+.listItem strong{color: var(--text)}
